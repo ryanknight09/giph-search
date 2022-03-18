@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "gif-search": "apps/gif-search",
+    "gif-search-e2e": "apps/gif-search-e2e"
+  }
+}

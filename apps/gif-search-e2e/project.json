@@ -1,0 +1,28 @@
+{
+  "root": "apps/gif-search-e2e",
+  "sourceRoot": "apps/gif-search-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/gif-search-e2e/cypress.json",
+        "devServerTarget": "gif-search:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "gif-search:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gif-search-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["gif-search"]
+}
