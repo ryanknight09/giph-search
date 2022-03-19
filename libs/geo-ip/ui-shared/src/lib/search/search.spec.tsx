@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import GifSearch from './gif-search';
+import Search from './search';
 
 describe('GifSearch', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<GifSearch />);
+    const { baseElement } = render(<Search onInputChange={() => ''} />);
     expect(baseElement).toBeTruthy();
   });
 });

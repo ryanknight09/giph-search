@@ -15,13 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@geo-ip/controlled-inputs": ["libs/controlled-inputs/src/index.ts"],
       "@geo-ip/geo-ip/ui-shared": ["libs/geo-ip/ui-shared/src/index.ts"],
-      "@geo-ip/shared-ui/gif-search": [
-        "libs/shared-ui/gif-search/src/index.ts"
-      ],
-      "@geo-ip/shared-ui/header": ["libs/shared-ui/header/src/index.ts"],
-      "@geo-ip/shared/gif-search": ["libs/shared/gif-search/src/index.ts"]
+      "@geo-ip/shared-ui/header": ["libs/shared-ui/header/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

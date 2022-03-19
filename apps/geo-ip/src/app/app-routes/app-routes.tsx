@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Home from '../pages/home/home';
+import Home from '../../pages/home/home';
 
 export const AppRoutes: FC = () => {
   return (

@@ -1,1 +1,2 @@
-export * from './lib/gif-search/gif-search';
+export * from './lib/search/search';
+export * from './lib/gif/gif';
