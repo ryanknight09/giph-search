@@ -9,13 +9,13 @@ interface GifProps {
 
 export const Gif: FC<GifProps> = ({ image }) => {
   return (
-    <Card sx={{ margin: 3 }}>
-      <CardMedia
-        component="img"
-        sx={{ height: 200 }}
-        image={image}
-        alt="green iguana"
-      />
+    <Card
+      sx={{
+        margin: 3,
+        boxShadow: 'rgba(107, 95, 236, 0.2) 0px 8px 24px',
+      }}
+    >
+      <CardMedia component="img" image={image} alt="green iguana" />
     </Card>
   );
 };

@@ -11,7 +11,15 @@ interface TermsProps {
 export const Tags: FC<TermsProps> = ({ tags, onTermDelete }) => (
   <Stack direction="row" spacing={1}>
     {tags.map((tag) => (
-      <Chip key={tag} label={tag} onDelete={() => onTermDelete(tag)} />
+      <Chip
+        sx={{
+          color: 'white',
+          backgroundColor: '#6b5fec',
+        }}
+        key={tag}
+        label={tag}
+        onDelete={() => onTermDelete(tag)}
+      />
     ))}
   </Stack>
 );

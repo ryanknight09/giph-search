@@ -12,7 +12,12 @@ export interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ logo }) => {
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: '#6b5fec',
+      }}
+    >
       <Container
         maxWidth="xl"
         sx={{
@@ -20,7 +25,7 @@ export const Header: FC<HeaderProps> = ({ logo }) => {
         }}
       >
         <Toolbar disableGutters>
-          <Typography variant="h4" noWrap>
+          <Typography variant="h6" noWrap>
             {logo}
           </Typography>
         </Toolbar>

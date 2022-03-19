@@ -27,10 +27,9 @@ export default App;
 const MainContentWrapper: FC = ({ children }) => (
   <Box
     sx={{
+      backgroundColor: '#36393f',
+      color: 'white',
       height: 'calc(100vh - 64px)',
-      // display: 'flex',
-      // justifyContent: 'space-evenly',
-      // alignItems: 'center',
     }}
   >
     {children}
