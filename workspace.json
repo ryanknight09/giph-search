@@ -4,6 +4,7 @@
     "controlled-inputs": "libs/controlled-inputs",
     "geo-ip": "apps/geo-ip",
     "geo-ip-e2e": "apps/geo-ip-e2e",
+    "geo-ip-ui-shared": "libs/geo-ip/ui-shared",
     "shared-ui-gif-search": "libs/shared-ui/gif-search",
     "shared-ui-header": "libs/shared-ui/header"
   }

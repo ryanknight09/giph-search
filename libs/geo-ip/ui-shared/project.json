@@ -1,0 +1,23 @@
+{
+  "root": "libs/geo-ip/ui-shared",
+  "sourceRoot": "libs/geo-ip/ui-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/geo-ip/ui-shared/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/geo-ip/ui-shared"],
+      "options": {
+        "jestConfig": "libs/geo-ip/ui-shared/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
