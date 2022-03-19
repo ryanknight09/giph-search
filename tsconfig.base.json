@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@geo-ip/controlled-inputs": ["libs/controlled-inputs/src/index.ts"],
       "@geo-ip/shared-ui/gif-search": [
         "libs/shared-ui/gif-search/src/index.ts"
       ],

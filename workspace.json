@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "controlled-inputs": "libs/controlled-inputs",
     "geo-ip": "apps/geo-ip",
     "geo-ip-e2e": "apps/geo-ip-e2e",
     "shared-ui-gif-search": "libs/shared-ui/gif-search",
