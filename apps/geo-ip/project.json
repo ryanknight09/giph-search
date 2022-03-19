@@ -1,6 +1,6 @@
 {
-  "root": "apps/gif-search",
-  "sourceRoot": "apps/gif-search/src",
+  "root": "apps/geo-ip",
+  "sourceRoot": "apps/geo-ip/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,16 +9,13 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/gif-search",
-        "index": "apps/gif-search/src/index.html",
+        "outputPath": "dist/apps/geo-ip",
+        "index": "apps/geo-ip/src/index.html",
         "baseHref": "/",
-        "main": "apps/gif-search/src/main.tsx",
-        "polyfills": "apps/gif-search/src/polyfills.ts",
-        "tsConfig": "apps/gif-search/tsconfig.app.json",
-        "assets": [
-          "apps/gif-search/src/favicon.ico",
-          "apps/gif-search/src/assets"
-        ],
+        "main": "apps/geo-ip/src/main.tsx",
+        "polyfills": "apps/geo-ip/src/polyfills.ts",
+        "tsConfig": "apps/geo-ip/tsconfig.app.json",
+        "assets": ["apps/geo-ip/src/favicon.ico", "apps/geo-ip/src/assets"],
         "styles": [],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -27,8 +24,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/gif-search/src/environments/environment.ts",
-              "with": "apps/gif-search/src/environments/environment.prod.ts"
+              "replace": "apps/geo-ip/src/environments/environment.ts",
+              "with": "apps/geo-ip/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -43,12 +40,12 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "gif-search:build",
+        "buildTarget": "geo-ip:build:develop",
         "hmr": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "gif-search:build:production",
+          "buildTarget": "geo-ip:build:production",
           "hmr": false
         }
       }
@@ -57,14 +54,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/gif-search/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/geo-ip/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/gif-search"],
+      "outputs": ["coverage/apps/geo-ip"],
       "options": {
-        "jestConfig": "apps/gif-search/jest.config.js",
+        "jestConfig": "apps/geo-ip/jest.config.js",
         "passWithNoTests": true
       }
     }

@@ -1,7 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "gif-search": "apps/gif-search",
-    "gif-search-e2e": "apps/gif-search-e2e"
+    "geo-ip": "apps/geo-ip",
+    "geo-ip-e2e": "apps/geo-ip-e2e",
+    "shared-ui-gif-search": "libs/shared-ui/gif-search",
+    "shared-ui-header": "libs/shared-ui/header"
   }
 }

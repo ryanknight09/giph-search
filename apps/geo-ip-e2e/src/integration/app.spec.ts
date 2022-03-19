@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('gif-search', () => {
+describe('geo-ip', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('gif-search', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome gif-search');
+    getGreeting().contains('Welcome geo-ip');
   });
 });
