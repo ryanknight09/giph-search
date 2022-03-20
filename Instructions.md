@@ -27,6 +27,8 @@ geo-ip/ <-------------------- This is the root where we should be running all co
 ├── package.json
 └── tsconfig.base.json
 
+!!! add the API KEY to the .env file located under: geo-ip/apps/geo-ip so that the app will fetch data properly.
+
 Run `nx serve geo-ip --port 8080` to start the development server.
 
 Notice the start script is generic and not like the normal React scripts. This allows us to start any app regardless of the framework. Dev ops will thank us later.
