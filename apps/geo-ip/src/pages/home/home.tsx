@@ -27,10 +27,10 @@ export const Home: FC = () => {
 
   return (
     <HomeWrapper>
-      <Typography mt={16} variant="h2">
+      <Typography mt={16} fontSize={'5vw'} variant="h2">
         Welcome to Giphy Search!
       </Typography>
-      <Box width={600} pt={16}>
+      <Box width={'80%'} maxWidth={600} pt={16}>
         <Typography mb={2}>
           <strong>Search Key:</strong> {searchKey}
         </Typography>
