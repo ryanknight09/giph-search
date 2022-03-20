@@ -15,7 +15,7 @@ export const Gif: FC<GifProps> = ({ image }) => {
         boxShadow: 'rgba(107, 95, 236, 0.2) 0px 8px 24px',
       }}
     >
-      <CardMedia component="img" image={image} alt="green iguana" />
+      <CardMedia component="img" image={image} alt="a gif!" />
     </Card>
   );
 };

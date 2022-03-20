@@ -1,9 +1,9 @@
 import { useState, KeyboardEvent, FC, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 
 import Tags from './tags';
+import TextInput from './text-input';
 
 const MAX_SEARCH_LENGTH = 50;
 
@@ -14,11 +14,12 @@ interface SearchProps {
 export const Search: FC<SearchProps> = ({ onInputChange }) => {
   const [searchPhrase, setSearchPhrase] = useState('');
   const [tags, setTags] = useState<string[]>([]);
+  const joinedTags = tags.join('+');
 
   useEffect(() => {
-    const getFinalPhrase = () => {
-      if (tags.join('+').length) {
-        let tagsWithoutPhrase = tags.join('+');
+    const combineTagsWithSearchPhrase = () => {
+      if (joinedTags.length) {
+        let tagsWithoutPhrase = joinedTags;
         if (searchPhrase) tagsWithoutPhrase += `+${searchPhrase}`;
 
         return tagsWithoutPhrase;
@@ -27,18 +28,16 @@ export const Search: FC<SearchProps> = ({ onInputChange }) => {
       return searchPhrase;
     };
 
-    onInputChange(getFinalPhrase());
-  }, [searchPhrase, onInputChange, tags]);
+    onInputChange(combineTagsWithSearchPhrase());
+  }, [searchPhrase, onInputChange, tags, joinedTags]);
 
-  const isInputValid = () => {
-    if (tags.join('+').length + searchPhrase.length > MAX_SEARCH_LENGTH)
-      return true;
+  const isJoinedTagsValid = () => joinedTags.length > MAX_SEARCH_LENGTH;
+  const isSearchPhraseValid = () => searchPhrase.length > MAX_SEARCH_LENGTH;
+  const isCombinedInputValid = () =>
+    joinedTags.length + searchPhrase.length > MAX_SEARCH_LENGTH;
 
-    return (
-      tags.join('+').length > MAX_SEARCH_LENGTH ||
-      searchPhrase.length > MAX_SEARCH_LENGTH
-    );
-  };
+  const isInputValid = () =>
+    isCombinedInputValid() || isSearchPhraseValid() || isJoinedTagsValid();
 
   const onTermDelete = (value: string) => {
     setTags(tags.filter((tag) => tag !== value));
@@ -66,9 +65,8 @@ export const Search: FC<SearchProps> = ({ onInputChange }) => {
   };
 
   return (
-    <Box>
-      <TextField
-        sx={TextFielSx}
+    <Box data-testid="custom-search">
+      <TextInput
         fullWidth
         variant="outlined"
         onKeyDown={onSearchEnter}
@@ -77,7 +75,7 @@ export const Search: FC<SearchProps> = ({ onInputChange }) => {
         error={isInputValid()}
         label="Search..."
         helperText={
-          isInputValid()
+          isCombinedInputValid()
             ? 'must be 50 or less characters'
             : 'Hint: hit enter to add up to 2 adjacent terms'
         }
@@ -88,27 +86,3 @@ export const Search: FC<SearchProps> = ({ onInputChange }) => {
 };
 
 export default Search;
-
-const TextFielSx = {
-  marginBottom: 2,
-  marginRight: 2,
-  '& .MuiFormLabel-root': {
-    color: '#B9BBBE',
-  },
-  '& .MuiInputBase-root': {
-    color: 'white',
-    backgroundColor: '#303030',
-  },
-  '&:hover .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#B9BBBE',
-  },
-  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#303030',
-  },
-  '& .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#303030',
-  },
-  '& .MuiFormHelperText-root': {
-    color: '#B9BBBE',
-  },
-};

@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-/* eslint-disable-next-line */
 export interface HeaderProps {
   logo: string;
 }

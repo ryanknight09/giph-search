@@ -15,12 +15,15 @@ export const Home: FC = () => {
 
   const results = data?.data || [];
 
-  const gifs = results.map((gif: any) => {
-    return {
-      image: gif.images['fixed_height'].url,
-      id: gif.id,
-    };
-  });
+  const gifs =
+    results.length >= 3
+      ? results.map((gif: any) => {
+          return {
+            image: gif.images['fixed_height'].url,
+            id: gif.id,
+          };
+        })
+      : [];
 
   return (
     <HomeWrapper>
@@ -49,6 +52,7 @@ export default Home;
 const HomeWrapper: FC = ({ children }) => (
   <Stack
     sx={{
+      color: 'white',
       height: '100%',
       display: 'flex',
       alignItems: 'center',

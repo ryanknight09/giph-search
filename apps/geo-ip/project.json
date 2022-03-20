@@ -40,6 +40,7 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
+        "port": 8080,
         "buildTarget": "geo-ip:build:develop",
         "hmr": true
       },
